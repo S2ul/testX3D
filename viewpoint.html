@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv='Content-Type' content='text/html;charset=utf-8'/> 
+<title>Viewpoint</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.js"></script> 
+<script type='text/javascript' src="http://www.x3dom.org/x3dom/release/x3dom.js"></script>
+<link rel='stylesheet' type='text/css' href="http://www.x3dom.org/x3dom/release/x3dom.css"/>
+</head>
+<body id='main'>
+<div align="center">
+<button onclick="document.getElementById('view1').setAttribute('set_bind','true');">💗 하트</button>
+<button onclick="document.getElementById('view2').setAttribute('set_bind','true');">🦋 나비</button>
+<button onclick="document.getElementById('view3').setAttribute('set_bind','true');">🍀 클로버</button>
+<button onclick="document.getElementById('view4').setAttribute('set_bind','true');">🍄 스페이드</button>
+<button onclick="document.getElementById('view5').setAttribute('set_bind','true');">🐻 곰</button>
+<button onclick="document.getElementById('view6').setAttribute('set_bind','true');">🌼 꽃</button>
+</div>
+<X3D>
+<Scene>
+<Viewpoint id="view1" position="0 0 -10" orientation='0 1 0 -3.14'></Viewpoint>
+<Viewpoint id="view2" position="10 0 0" orientation='0 1 0 1.57'></Viewpoint>
+<Viewpoint id="view3" position="0 0 10" orientation='0 1 0 0'></Viewpoint>
+<Viewpoint id="view4" position="-10 0 0" orientation='0 1 0 -1.57'></Viewpoint>
+<Viewpoint id="view5" position="0 10 0" orientation='1 0 0 -1.57'></Viewpoint>
+<Viewpoint id="view6" position="0 -10 0" orientation='1 0 0 1.57'></Viewpoint>
+
+<!-- 하트 -->
+	<Transform translation='-.4 0 -3' scale='.7 1.1 .7' rotation='0 0 1 .7'>
+		<Shape><Sphere></Sphere>
+		<Appearance DEF='har'>
+			<Material diffuseColor ='1 .2 .2'
+						emissiveColor ='.2 .06 .08'
+						ambientIntensity ='0'
+						shininess ='0'></Material>
+		</Appearance></Shape>
+	</Transform>
+	<Transform translation='.4 0 -3' scale='.7 1.1 .7' rotation='0 0 -1 .7'>
+		<Shape><Sphere></Sphere>
+		<Appearance USE='har'>
+		</Appearance></Shape>
+	</Transform>
+
+<!-- 나비 -->	
+	<Transform translation='3 0 .2' scale='.7 1.5 .7' rotation='1 0 0 .8'>
+		<Shape><Sphere></Sphere>
+		<Appearance DEF='bu'>
+			<Material diffuseColor ='1 .6 0'
+						emissiveColor ='.28 .22 0'
+						ambientIntensity ='0'
+						shininess ='0'></Material>
+		</Appearance></Shape>
+	</Transform>
+	<Transform translation='3 0 -.2' scale='.7 1.5 .7' rotation='-1 0 0 .8'>
+		<Shape><Sphere></Sphere>
+		<Appearance USE='bu'></Appearance>
+		</Shape>
+	</Transform>
+	
+	<Transform translation='3 .6 0' scale='.05 1 .05' rotation='-1 0 0 .3'>
+		<Shape><Sphere></Sphere>
+		<Appearance USE='bu'></Appearance>
+		</Shape>
+	</Transform>
+	<Transform translation='3 .6 0' scale='.05 1 .05' rotation='1 0 0 .3'>
+		<Shape><Sphere></Sphere>
+		<Appearance USE='bu'></Appearance>
+		</Shape>
+	</Transform>
+
+<!-- 클로버 -->
+	<Transform translation='0 .4 3' scale='.7 .7 .7'>
+		<Shape><Sphere></Sphere>
+		<Appearance DEF='cr'>
+			<Material diffuseColor ='.21 .44 0'
+						emissiveColor ='.09 .18 0'
+						ambientIntensity ='0'
+						shininess ='0'></Material>
+		</Appearance></Shape>
+	</Transform>
+	<Transform translation='-.5 -.2 3' scale='.7 .7 .7'>
+		<Shape><Sphere></Sphere>
+		<Appearance USE='cr'>
+		</Appearance></Shape>
+	</Transform>
+	<Transform translation='.5 -.2 3' scale='.7 .7 .7'>
+		<Shape><Sphere></Sphere>
+		<Appearance USE='cr'>
+		</Appearance></Shape>
+	</Transform>
+	
+	<Transform translation='0 -.7 3' scale='.5 .4 .5'>
+		<Shape><Cone></Cone>
+		<Appearance USE='cr'>
+		</Appearance></Shape>
+	</Transform>
+
+<!-- 스페이드 -->		
+	<Transform translation='-3 0 .3' scale='.7 1 .7' rotation='-1 0 0 1'>
+		<Shape><Sphere></Sphere>
+		<Appearance DEF='sp'>
+			<Material diffuseColor ='.26 .33 1'
+						emissiveColor ='.05 .07 .2'
+						ambientIntensity ='0'
+						shininess ='0'></Material>
+		</Appearance></Shape>
+	</Transform>
+	<Transform translation='-3 0 -.3' scale='.7 1 .7' rotation='1 0 0 1'>
+		<Shape><Sphere></Sphere>
+		<Appearance USE='sp'>
+		</Appearance></Shape>
+	</Transform>
+	
+	<Transform translation='-3 -.7 0' scale='.5 .4 .5'>
+		<Shape><Cone></Cone>
+		<Appearance USE='sp'>
+		</Appearance></Shape>
+	</Transform>
+
+<!-- 곰 -->	
+	<Transform translation='0 3 0' scale='1 .6 .9'>
+		<Shape><Sphere></Sphere>
+		<Appearance DEF=be>
+			<Material diffuseColor ='0 0 0'
+						emissiveColor ='.15 .15 .15'
+						ambientIntensity =' 0'
+						specularColor ='.5 .5 .5'>
+		</Material></Appearance></Shape>
+	</Transform>
+
+	<Transform translation='.6 3 -.8' scale='.3 .3 .3'>
+		<Shape><Sphere></Sphere>
+		<Appearance Appearance USE=be></Appearance></Shape>
+	</Transform>
+	<Transform translation='-.6 3 -.8' scale='.3 .3 .3'>
+		<Shape><Sphere></Sphere>
+		<Appearance USE=be></Appearance></Shape>
+	</Transform>
+	
+	<Transform translation='.3 3.5 -.1' scale='.1 .1 .1'>
+		<Shape><Sphere></Sphere>
+		<Appearance DEF=ey>
+			<Material 	ambientIntensity ='.01'
+						specularColor ='.39 .37 .63'
+						shininess ='.05'>
+		</Material></Appearance></Shape>
+	</Transform>
+	<Transform translation='-.3 3.5 -.1' scale='.1 .1 .1'>
+		<Shape><Sphere></Sphere>
+		<Appearance USE=ey></Appearance></Shape>
+	</Transform>
+	<Transform translation='0 3.6 .1' scale='.15 .1 .1'>
+		<Shape><Sphere></Sphere>
+		<Appearance USE=ey></Appearance></Shape>
+	</Transform>
+	
+	<Transform translation='.03 3.5 .4' scale='.06 .2 .06' rotation='0 .2 1 1.7'>
+		<Shape><Cylinder></Cylinder>
+		<Appearance USE=ey></Appearance></Shape>
+	</Transform>
+	<Transform translation='0 3.54 .25' scale='.05 .19 .05' rotation='1 0 0 1.8'>
+		<Shape><Cylinder></Cylinder>
+		<Appearance USE=ey></Appearance></Shape>
+	</Transform>
+
+<!-- 꽃 -->	
+	<Transform translation='0 -3.3 0' scale='.6 .3 .6'>
+		<Shape><Sphere></Sphere>
+		<Appearance USE=bu></Appearance></Shape>
+	</Transform>
+	<Transform translation='0 -2.6 0' scale='.6 .3 .6'>
+		<Shape><Sphere></Sphere>
+		<Appearance USE=bu></Appearance></Shape>
+	</Transform>
+	
+	<Transform translation='-.7 -3 0' scale='.9 .3 .4'>
+		<Shape><Sphere></Sphere>
+		<Appearance DEF=fl>
+			<Material 	ambientIntensity ='0'
+						shininess ='0'
+						diffuseColor ='1 .902 .902'
+						emissiveColor ='.2 .18 .12'></Material>
+			</Appearance></Shape>
+	</Transform>
+	<Transform translation='.7 -3 0' scale='.9 .3 .4'>
+		<Shape><Sphere></Sphere>
+		<Appearance USE=fl></Appearance></Shape>
+	</Transform>
+	<Transform translation='0 -3 -.7' scale='.9 .3 .4' rotation='0 1 0 1.57'>
+		<Shape><Sphere></Sphere>
+		<Appearance USE=fl></Appearance></Shape>
+	</Transform>
+	<Transform translation='0 -3 .7' scale='.9 .3 .4' rotation='0 1 0 1.57'>
+		<Shape><Sphere></Sphere>
+		<Appearance USE=fl></Appearance></Shape>
+	</Transform>
+	
+	<Transform translation='.7 -2.9 -.61' scale='.9 .3 .4' rotation='0 1 0 .78'>
+		<Shape><Sphere></Sphere>
+		<Appearance DEF=flw>
+			<Material 	ambientIntensity ='0'
+						shininess ='0'
+						diffuseColor ='1 .902 .702'
+						emissiveColor ='.2 .18 .12'></Material>
+		</Appearance></Shape>
+	</Transform>
+	<Transform translation='-.7 -2.9 .61' scale='.9 .3 .4' rotation='0 1 0 .78'>
+		<Shape><Sphere></Sphere>
+		<Appearance USE=flw></Appearance></Shape>
+	</Transform>
+	<Transform translation='-.7 -2.9 -.61' scale='.9 .3 .4' rotation='0 -1 0 .78'>
+		<Shape><Sphere></Sphere>
+		<Appearance USE=flw></Appearance></Shape>
+	</Transform>
+	<Transform translation='.7 -2.9 .61' scale='.9 .3 .4' rotation='0 -1 0 .78'>
+		<Shape><Sphere></Sphere>
+		<Appearance USE=flw></Appearance></Shape>
+	</Transform>
+	
+</Scene>
+</X3D>
+</head>
+</html>
